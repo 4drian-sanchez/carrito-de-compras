@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de compras | cursos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS main -->
+    <link rel="stylesheet" href="./build/css/app.css" />
+    <!-- <link rel="stylesheet" href="./build/css/app.min.css" /> -->
+
+    <script src="./js/app.js" defer></script>
+  </head>
+  <body>
+    <header
+      class="header pt-3 pb-2 d-flex flex-column flex-sm-row justify-content-between align-items-center border-bottom"
+    >
+      <!-- Icono del sitio -->
+      <picture>
+        <source srcset="./build/img/logo.avif" type="image/avif" />
+        <source srcset="./build/img/logo.webp" type="image/webp" />
+        <img
+          loading="lazy"
+          src="./build/img/logo.jpg"
+          alt="Logo del sitio web"
+          title="Logo del sitio web"
+          class="header__logo ps-sm-2"
+        />
+      </picture>
+
+      <!-- Icono kart -->
+      <picture>
+        <source srcset="./build/img/cart.avif" type="image/avif" />
+        <source srcset="./build/imgcart.webp" type="image/webp" />
+        <img
+          loading="lazy"
+          src="./build/img/cart.png"
+          alt="Carrito de compras"
+          class="listado__logo mt-1 mt-ms-0 px-3"
+        />
+      </picture>
+    </header>
+
+    <!-- Listado  -->
+    <div class="listado d-none">
+      <button class="listado__close btn btn-close"></button>
+
+      <div class="listado__cursos bg-white shadow py-4 px-2">
+        <div class="row text-center">
+          <p class="col-3 p-0 fw-bold">Imagen</p>
+          <p class="col-3 p-0 fw-bold">Nombre</p>
+          <p class="col-2 p-0 fw-bold">Precio</p>
+          <p class="col-2 fw-bold">Cantidad</p>
+        </div>
+        <div class="listado__body"></div>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__contenido text-white text-center text-sm-start">
+          <h2>Aprende algo nuevo</h2>
+          <p>Todos los cursos a $15</p>
+          <form class="form">
+            <input
+              type="text"
+              placeholder="¿Qué quieres aprender?"
+              class="form-control pe-4"
+            />
+            <button type="submit" class="form__buscar"></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Barra de iconos y descripcion-->
+    <div class="barra">
+      <div class="container">
+        <div class="row m-0 py-3 text-white text-center">
+          <!-- COL 1 -->
+          <div
+            class="col-md-4 d-flex align-items-center align-items-md-start flex-column flex-md-row mb-3 mb-md-0"
+          >
+            <picture>
+              <source srcset="./build/img/icono1.avif" type="image/avif" />
+              <source srcset="./build/img/icono1.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="./build/img/icono1.png"
+                alt="Icono"
+                title="Icono"
+                class="barra__icono barra__icono--1"
+              />
+            </picture>
+            <p class="ps-md-2 pe-md-4 mt-2 mt-md-0">
+              20,000 Cursos en línea Explora los temas más recientes
+            </p>
+          </div>
+
+          <!-- COL 2 -->
+          <div
+            class="col-md-4 d-flex align-items-center align-items-md-start flex-column flex-md-row mb-3 mb-md-0"
+          >
+            <picture>
+              <source srcset="./build/img/icono2.avif" type="image/avif" />
+              <source srcset="./build/img/icono2.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="./build/img/icono2.png"
+                alt="Icono"
+                title="Icono"
+                class="barra__icono"
+              />
+            </picture>
+            <p class="ps-md-2 pe-md-4 mt-2 mt-md-0">
+              Instructores Expertos Aprende con distintos estilos
+            </p>
+          </div>
+
+          <!-- COL 3 -->
+          <div
+            class="col-md-4 d-flex align-items-center align-items-md-start flex-column flex-md-row"
+          >
+            <picture>
+              <source srcset="./build/img/icono3.avif" type="image/avif" />
+              <source srcset="./build/img/icono3.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="./build/img/icono3.png"
+                alt="Icono"
+                title="Icono"
+                class="barra__icono"
+              />
+            </picture>
+            <p class="ps-md-2 pe-md-4 mt-2 mt-md-0">
+              Acceso de por vida Aprende a tu ritmo
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- cursos -->
+    <main id="cursos" class="container pt-4 mt-3">
+      <h1 class="text-center display-1">Cursos en Linea</h1>
+
+      <div class="row m-0">
+        <!-- CURSO 1-->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card curso" data-id="1">
+            <!-- Imagen del curso -->
+            <picture>
+              <source srcset="./build/img/curso1.avif" type="image/avif" />
+              <source srcset="./build/img/curso1.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="./build/img/curso1.jpg"
+                alt="Imagen del curso"
+                title="Imagen del curso"
+                class="card-img-top object-fit"
+              />
+            </picture>
+
+            <div class="card-body">
+              <h3 class="card-title text-center mb-2">
+                HTML5, CSS3, JavaScript para Principiantes
+              </h3>
+              <p class="card-text m-0">Juan Pedro</p>
+
+              <!-- Imagen de estrellas -->
+              <picture>
+                <source srcset="./build/img/estrellas.avif" type="image/avif" />
+                <source srcset="./build/img/estrellas.webp" type="image/webp" />
+                <img
+                  loading="lazy"
+                  src="./build/img/estrellas.png"
+                  alt="Imagen de estrellas"
+                  title="Imagen de estrellas"
+                />
+              </picture>
+
+              <!-- Precios -->
+              <div class="d-flex justify-content-between mt-2 fs-5">
+                <s>$200</s>
+                <p id="precio" class="fw-bold">$15</p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-success text-white d-block w-100 curso-btn"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <!-- CURSO 2-->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card curso" data-id="2">
+            <!-- Imagen del curso -->
+            <picture>
+              <source srcset="./build/img/curso2.avif" type="image/avif" />
+              <source srcset="./build/img/curso2.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="./build/img/curso2.jpg"
+                alt="Imagen del curso"
+                title="Imagen del curso"
+                class="card-img-top object-fit"
+              />
+            </picture>
+
+            <div class="card-body">
+              <h3 class="card-title text-center mb-3">
+                Curso de Comida Vegetariana
+              </h3>
+              <p class="card-text m-0">Adrian Sanchez</p>
+
+              <!-- Imagen de estrellas -->
+              <picture>
+                <source srcset="./build/img/estrellas.avif" type="image/avif" />
+                <source srcset="./build/img/estrellas.webp" type="image/webp" />
+                <img
+                  loading="lazy"
+                  src="./build/img/estrellas.png"
+                  alt="Imagen de estrellas"
+                  title="Imagen de estrellas"
+                />
+              </picture>
+
+              <!-- Precios -->
+              <div class="d-flex justify-content-between mt-2 fs-5 pb-sm-3">
+                <s>$200</s>
+                <p id="precio" class="fw-bold">$15</p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-success text-white d-block w-100 curso-btn"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <!-- CURSO 3-->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card curso" data-id="3">
+            <!-- Imagen del curso -->
+            <picture>
+              <source srcset="./build/img/curso3.avif" type="image/avif" />
+              <source srcset="./build/img/curso3.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="./build/img/curso3.jpg"
+                alt="Imagen del curso"
+                title="Imagen del curso"
+                class="card-img-top object-fit"
+              />
+            </picture>
+
+            <div class="card-body">
+              <h3 class="card-title text-center mb-3">
+                Guitarra para Principiantes
+              </h3>
+              <p class="card-text m-0">Julio Fernandez</p>
+
+              <!-- Imagen de estrellas -->
+              <picture>
+                <source srcset="./build/img/estrellas.avif" type="image/avif" />
+                <source srcset="./build/img/estrellas.webp" type="image/webp" />
+                <img
+                  loading="lazy"
+                  src="./build/img/estrellas.png"
+                  alt="Imagen de estrellas"
+                  title="Imagen de estrellas"
+                />
+              </picture>
+
+              <!-- Precios -->
+              <div class="d-flex justify-content-between mt-2 fs-5 pb-sm-3">
+                <s>$200</s>
+                <p id="precio" class="fw-bold">$15</p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-success text-white d-block w-100 curso-btn"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <!-- CURSO 4-->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card curso" data-id="4">
+            <!-- Imagen del curso -->
+            <picture>
+              <source srcset="./build/img/curso4.avif" type="image/avif" />
+              <source srcset="./build/img/curso4.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="./build/img/curso4.jpg"
+                alt="Imagen del curso"
+                title="Imagen del curso"
+                class="card-img-top object-fit"
+              />
+            </picture>
+
+            <div class="card-body">
+              <h3 class="card-title text-center mb-3">Huerto en tu casa</h3>
+              <p class="card-text m-0">Ramón Sánchez</p>
+
+              <!-- Imagen de estrellas -->
+              <picture>
+                <source srcset="./build/img/estrellas.avif" type="image/avif" />
+                <source srcset="./build/img/estrellas.webp" type="image/webp" />
+                <img
+                  loading="lazy"
+                  src="./build/img/estrellas.png"
+                  alt="Imagen de estrellas"
+                  title="Imagen de estrellas"
+                />
+              </picture>
+
+              <!-- Precios -->
+              <div class="d-flex justify-content-between mt-2 fs-5 pb-sm-3">
+                <s>$200</s>
+                <p id="precio" class="fw-bold">$15</p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-success text-white d-block w-100 curso-btn"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <!-- CURSO 5-->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card curso" data-id="5">
+            <!-- Imagen del curso -->
+            <picture>
+              <source srcset="./build/img/curso5.avif" type="image/avif" />
+              <source srcset="./build/img/curso5.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="./build/img/curso5.jpg"
+                alt="Imagen del curso"
+                title="Imagen del curso"
+                class="card-img-top object-fit"
+              />
+            </picture>
+
+            <div class="card-body">
+              <h3 class="card-title text-center mb-3">
+                Decoración con productos de tu hogar
+              </h3>
+              <p class="card-text m-0">Trina Duque</p>
+
+              <!-- Imagen de estrellas -->
+              <picture>
+                <source srcset="./build/img/estrellas.avif" type="image/avif" />
+                <source srcset="./build/img/estrellas.webp" type="image/webp" />
+                <img
+                  loading="lazy"
+                  src="./build/img/estrellas.png"
+                  alt="Imagen de estrellas"
+                  title="Imagen de estrellas"
+                />
+              </picture>
+
+              <!-- Precios -->
+              <div class="d-flex justify-content-between mt-2 fs-5 pb-sm-3">
+                <s>$200</s>
+                <p id="precio" class="fw-bold">$15</p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-success text-white d-block w-100 curso-btn"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <!-- CURSO 6-->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card curso" data-id="6">
+            <!-- Imagen del curso -->
+            <picture>
+              <source srcset="./build/img/curso6.avif" type="image/avif" />
+              <source srcset="./build/img/curso6.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="./build/img/curso6.jpg"
+                alt="Imagen del curso"
+                title="Imagen del curso"
+                class="card-img-top object-fit"
+              />
+            </picture>
+
+            <div class="card-body">
+              <h3 class="card-title text-center mb-3">
+                Diseño Web para Principiantes
+              </h3>
+              <p class="card-text m-0">Adro Van Sancho</p>
+
+              <!-- Imagen de estrellas -->
+              <picture>
+                <source srcset="./build/img/estrellas.avif" type="image/avif" />
+                <source srcset="./build/img/estrellas.webp" type="image/webp" />
+                <img
+                  loading="lazy"
+                  src="./build/img/estrellas.png"
+                  alt="Imagen de estrellas"
+                  title="Imagen de estrellas"
+                />
+              </picture>
+
+              <!-- Precios -->
+              <div class="d-flex justify-content-between mt-2 fs-5 pb-sm-3">
+                <s>$200</s>
+                <p id="precio" class="fw-bold">$15</p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-success text-white d-block w-100 curso-btn"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <!-- CURSO 7-->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card curso" data-id="7">
+            <!-- Imagen del curso -->
+            <picture>
+              <source srcset="./build/img/curso7.avif" type="image/avif" />
+              <source srcset="./build/img/curso7.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="./build/img/curso7.jpg"
+                alt="Imagen del curso"
+                title="Imagen del curso"
+                class="card-img-top object-fit"
+              />
+            </picture>
+
+            <div class="card-body">
+              <h3 class="card-title text-center mb-3">
+                Comida Mexicana para principiantes
+              </h3>
+              <p class="card-text m-0">Juan de la Torre</p>
+
+              <!-- Imagen de estrellas -->
+              <picture>
+                <source srcset="./build/img/estrellas.avif" type="image/avif" />
+                <source srcset="./build/img/estrellas.webp" type="image/webp" />
+                <img
+                  loading="lazy"
+                  src="./build/img/estrellas.png"
+                  alt="Imagen de estrellas"
+                  title="Imagen de estrellas"
+                />
+              </picture>
+
+              <!-- Precios -->
+              <div class="d-flex justify-content-between mt-2 fs-5 pb-sm-3">
+                <s>$200</s>
+                <p id="precio" class="fw-bold">$15</p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-success text-white d-block w-100 curso-btn"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <!-- COL 8-->
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card curso" data-id="8">
+            <!-- Imagen del curso -->
+            <picture>
+              <source srcset="./build/img/curso8.avif" type="image/avif" />
+              <source srcset="./build/img/curso8.webp" type="image/webp" />
+              <img
+                loading="lazy"
+                src="./build/img/curso8.jpg"
+                alt="Imagen del curso"
+                title="Imagen del curso"
+                class="card-img-top object-fit"
+              />
+            </picture>
+
+            <div class="card-body">
+              <h3 class="card-title text-center mb-3">
+                Cosecha tus propias frutas y verduras
+              </h3>
+              <p class="card-text m-0">Ramon Sanchez</p>
+
+              <!-- Imagen de estrellas -->
+              <picture>
+                <source srcset="./build/img/estrellas.avif" type="image/avif" />
+                <source srcset="./build/img/estrellas.webp" type="image/webp" />
+                <img
+                  loading="lazy"
+                  src="./build/img/estrellas.png"
+                  alt="Imagen de estrellas"
+                  title="Imagen de estrellas"
+                />
+              </picture>
+
+              <!-- Precios -->
+              <div class="d-flex justify-content-between mt-2 fs-5 pb-sm-3">
+                <s>$200</s>
+                <p id="precio" class="fw-bold">$15</p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-success text-white d-block w-100 curso-btn"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container pt-4 border-top text-center text-md-start pb-1">
+      <div class="row">
+        <div class="col-md-3 mb-3 mb-md-0">
+          <nav class="nav d-flex flex-column">
+            <a href="#" class="nav-link">Para tu Negocio</a>
+            <a href="#" class="nav-link">Conviertete en instructor</a>
+            <a href="#" class="nav-link">Aplicacion movil</a>
+            <a href="#" class="nav-link">Soporte</a>
+            <a href="#" class="nav-link">Temas</a>
+          </nav>
+        </div>
+        <div class="col-md-3">
+          <nav class="nav d-flex flex-column">
+            <a href="#" class="nav-link">¿Quienes somos?</a>
+            <a href="#" class="nav-link">Empleo</a>
+            <a href="#" class="nav-link">Blog</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
